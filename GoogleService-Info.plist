@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>23145495830-5b7l1iiejkq1nr7v5653lpk4pridth3o.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.23145495830-5b7l1iiejkq1nr7v5653lpk4pridth3o</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCIBblTKw0SF41gV-4vtpJ8YpH3Z-A6z88</string>
+	<key>GCM_SENDER_ID</key>
+	<string>23145495830</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.myworldpro.INAB</string>
+	<key>PROJECT_ID</key>
+	<string>inab-e41ac</string>
+	<key>STORAGE_BUCKET</key>
+	<string>inab-e41ac.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:23145495830:ios:4bd3ba9b0f47c08a</string>
+	<key>DATABASE_URL</key>
+	<string>https://inab-e41ac.firebaseio.com</string>
+</dict>
+</plist>
