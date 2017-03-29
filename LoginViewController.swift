@@ -8,11 +8,10 @@
 
 import UIKit
 import Firebase
+import SnapKit
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
-    
-    @IBOutlet weak var Email: UITextField!
-    @IBOutlet weak var Password: UITextField!
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func displayAlert(title:String, message: String){
         
@@ -22,25 +21,15 @@ class LoginViewController: UIViewController {
     }
     
     func handleLogin(){
-        guard let email = Email.text, let password = Password.text else{
-            displayAlert(title: "Error", message: "Problem Signing In, Try Again")
-            return
+        FBSDKLoginManager().logIn(withReadPermissions: ["email","public_profile"], from: self)
+            {   (result, err) in
+                if err != nil {
+                print("FB Login Failed!", err!)
+                }
+           self.ShowEmailAddress()
+           self.performSegue(withIdentifier: "LoginSegue", sender: LoginViewController.self)
         }
-        
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, err) in
-            
-            if err != nil {
-                print(err!)
-                return
-            }
-            
-            guard let userID = FIRAuth.auth()?.currentUser?.uid else {
-            self.displayAlert(title: "Error", message: "User Does not Exist")
-                return
-            }
-            
-            self.CheckUserType(user: userID)
-        })
+    
     }
     func CheckUserType(user: String){
         FIRDatabase.database().reference().child("users").child(user).observeSingleEvent(of: .value, with: {(snapshot) in
@@ -56,19 +45,47 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did log out with Facebook")
+    }
     
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        }
+    }
     // this logs the user in and creates a user in the firebase database
-    
+    func ShowEmailAddress(){
+        let accessToken = FBSDKAccessToken.current()
+        guard let accessTokenString = accessToken?.tokenString else
+           { return }
+        let credentials = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        FIRAuth.auth()?.signIn(with: credentials,  completion: { (user, error) in
+            if error != nil {
+                print("Something went wrong with our FB user: ",error ?? "")
+                return
+            }
+            print("Successfully logged in with our user: ", user ?? "")
+        })
+        
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields" : "id,name,email"]).start { (connection, result, err) in
+            if err != nil {
+                print( "failed to create graph request: ",err as Any )
+                return
+            }
+            print(result as Any)
+        }
+    }
     @IBAction func Login(_ sender: Any) {
     // check to see if email and password fields have values
-       handleLogin()
-        
+        handleLogin()
     }
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -76,4 +93,3 @@ class LoginViewController: UIViewController {
     
     
 }
-
