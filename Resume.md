@@ -1,8 +1,8 @@
 SOFTWARE ENGINEER
 RESDAN LOGAN
  Rezn5447@gmail.com  805-324-2053  El Cerrito, California
- Resdan  resdan  rezn5447
-SKILLS TECHNOLOGIES React JS, Ruby, AJAX, JQuery, Bootstrap, Swift, SCSS, SASS, JQuery,
+
+#SKILLS TECHNOLOGIES React JS, Ruby, AJAX, JQuery, Bootstrap, Swift, SCSS, SASS, JQuery,
 Unreal Script, JSON, After Effects, React-Native
 TOOLS &
 SOFTWARES
