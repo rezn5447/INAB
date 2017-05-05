@@ -2,16 +2,21 @@ SOFTWARE ENGINEER
 RESDAN LOGAN
  Rezn5447@gmail.com  805-324-2053  El Cerrito, California
 
-#SKILLS TECHNOLOGIES React JS, Ruby, AJAX, JQuery, Bootstrap, Swift, SCSS, SASS, JQuery,
+#SKILLS 
+##TECHNOLOGIES 
+React JS, Ruby, AJAX, JQuery, Bootstrap, Swift, SCSS, SASS, JQuery,
 Unreal Script, JSON, After Effects, React-Native
-TOOLS &
-SOFTWARES
+
+#TOOLS & SOFTWARES
 Active Record, RESTful APIs, Postgres, Travis CI, GitHub, Firebase, MySQL,
 Unreal Engine 4, VMWare, Photoshop, Illustrator, Moqups, Xcode, Rails,
 Npm, Trello, SnapKit, Lottie
-PRACTICES Pair Programming, Agile Development, Test Driven Development, Scrum
-PROJECTS
-INAB (I NEED A BEER)
+##PRACTICES 
+Pair Programming, Agile Development, Test Driven Development, Scrum
+
+
+##PROJECTS
+#INAB (I NEED A BEER)
 Contract to build a mobile application that fixes the order system at
 stadiums by providing vendors direct access to their stadium goers
 Self-taught Xcode and Swift programming to create and iOS
